@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrator: Command Prompt - System Diagnostic</title>
+    <link rel="stylesheet" href="../public/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="bg-scanline"></div>
+
+    <div id="terminal-window" class="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-title">
+          <img
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23cccccc' stroke-width='2'><rect x='2' y='4' width='20' height='16' rx='2'/><path d='M6 9l4 3-4 3'/><path d='M12 15h6'/></svg>"
+            alt="cmd"
+            class="cmd-icon"
+          />
+          <span>Administrator: Command Prompt - sys_purge.exe</span>
+        </div>
+        <div class="terminal-controls">
+          <button
+            class="win-btn win-minimize"
+            tabindex="-1"
+            aria-label="Minimize"
+          >
+            –
+          </button>
+          <button
+            class="win-btn win-maximize"
+            tabindex="-1"
+            aria-label="Maximize"
+          >
+            □
+          </button>
+          <button class="win-btn win-close" tabindex="-1" aria-label="Close">
+            ✕
+          </button>
+        </div>
+      </div>
+
+      <div id="terminal-body" class="terminal-body">
+        <div class="system-intro">
+          Microsoft Windows [Version 10.0.19045.3803]<br />
+          (c) Microsoft Corporation. All rights reserved.<br /><br />
+        </div>
+
+        <div id="terminal-output"></div>
+
+        <div id="input-line" class="prompt-line hidden">
+          <span id="prompt-text" class="prompt-text text-yellow"
+            >Do you still wish to continue? (Y/N):
+          </span>
+          <span id="input-buffer" class="text-yellow"></span
+          ><span class="cursor">_</span>
+          <input
+            type="text"
+            id="hidden-input"
+            autocomplete="off"
+            spellcheck="false"
+            autofocus
+          />
+        </div>
+      </div>
+    </div>
+
+    <div id="flash-overlay" class="flash-overlay"></div>
+
+    <div id="reveal-screen" class="reveal-screen hidden">
+      <canvas id="matrix-canvas"></canvas>
+
+      <div class="reveal-card">
+        <div class="reveal-emoji">😄</div>
+        <h1 class="reveal-title">GOTCHA!</h1>
+        <p class="reveal-subtitle">
+          Your operating system is completely safe and fine.
+        </p>
+
+        <div class="reveal-details">
+          <div class="detail-item">
+            <span class="check-icon">✓</span>
+            <span>No files were accessed or deleted</span>
+          </div>
+          <div class="detail-item">
+            <span class="check-icon">✓</span>
+            <span>Zero changes made to system registry or disk</span>
+          </div>
+          <div class="detail-item">
+            <span class="check-icon">✓</span>
+            <span>100% harmless browser visual simulation</span>
+          </div>
+        </div>
+
+        <p class="reveal-fun">
+          You survived the fake system apocalypse!<br />
+          <em>Maybe think twice before pressing "Y" next time. 😉</em>
+        </p>
+
+        <button id="run-again-btn" class="btn-primary">
+          <span>🔄 Run Again</span>
+        </button>
+      </div>
+    </div>
+
+    <script src="../app.js"></script>
+  </body>
+</html>
